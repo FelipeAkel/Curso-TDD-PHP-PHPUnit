@@ -28,6 +28,8 @@ class FidelityProgramService
     {
         $this->logger->log('Checking points for customer');
         $pointsToAdd = $this->pointsCalculator->calculatePointsToReceive($value);
+        
+        // throw new \Exception('Entrou aqui!'); // Realizando a verificação se está chegando aqui!
 
         if ($pointsToAdd > 0) {
             $points = new Points($customer, $pointsToAdd);
